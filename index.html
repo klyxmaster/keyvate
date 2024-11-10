@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminal Password Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="container">
+        <header>
+            <h1>Terminal Password Manager</h1>
+            <div id="search-container">
+                <input type="text" id="search-query" placeholder="Search...">               
+                <button onclick="performSearch()">Search</button>
+            </div>
+        </header>
+
+        <main id="app">
+            <!-- Sidebar for Listing Sites or Cards -->
+            <aside id="list-panel">
+                <div id="radio-buttons">
+                    <label><input type="radio" name="itemType" value="websites" checked onclick="toggleAddButton('websites')"> Websites</label>
+                    <label><input type="radio" name="itemType" value="cards" onclick="toggleAddButton('cards')"> Cards</label>
+                </div>
+
+                <!-- Separate "Add Site" and "Add Card" buttons -->
+                <div id="add-buttons">
+                    <button id="add-website-button" onclick="showAddSiteForm()">+ Add Website</button>
+                    <button id="add-card-button" onclick="showAddCardForm()" style="display: none;">+ Add Credit Card</button>
+                </div>
+
+                <!-- Dynamic list of sites or cards will go here -->
+                <ul id="item-list"></ul>
+            </aside>
+
+            <!-- Main Content Panel for Viewing/Editing Details -->
+            <section id="details-panel">
+                <div id="details-container">
+                    <h2>Item Details</h2>
+                    <div id="item-details">
+                        <p>Select an item to view its details or add a new entry.</p>
+                    </div>
+
+                    <!-- Add Site Form -->
+                    <div id="add-site-form" class="form-section" style="display: none;">
+                        <h3>Add New Site</h3>
+                        <form onsubmit="saveSite(event)">
+                            <label>Site Name: <input type="text" id="site-name" required></label>
+                            <label>URL: <input type="url" id="site-url" required></label>
+                            <label>Username: <input type="text" id="site-username" required></label>
+                            <label>Password: <input type="password" id="site-password" required></label>
+                            <label>Notes: <textarea id="site-notes"></textarea></label>
+                            <label>2FA Secret Key: <input type="text" id="site-2fa-secret"></label>
+                            <button type="submit">Save Site</button>
+                            <button type="button" onclick="cancelForm('add-site-form')">Cancel</button>
+                        </form>
+                    </div>
+
+                    <!-- Add Credit Card Form -->
+                    <div id="add-card-form" style="display: none;">
+						<h3>Add Credit Card</h3>
+						<form onsubmit="saveCard(event)">
+							<label>Card Type: <input type="text" id="card-type" placeholder="e.g., Visa, MasterCard"></label>
+							
+							<label>Card Number: <input type="text" id="card-number" placeholder="Card Number"></label>
+							
+							<div class="row">
+								<label>Expiration Month: <input type="number" id="expiration-month" placeholder="MM" min="1" max="12"></label>
+								<label>Expiration Year: <input type="number" id="expiration-year" placeholder="YYYY" min="2023"></label>
+								<label>CVV: <input type="password" id="cvv" placeholder="3-digit Code"></label>
+							</div>
+							
+							<label>Balance: <input type="number" id="balance" placeholder="Current Balance (optional)"></label>
+							
+							<label>Limit: <input type="number" id="limit" placeholder="Credit Limit (optional)"></label>
+							
+							<button type="submit">Save Card</button>
+							<button type="button" onclick="cancelForm('add-card-form')">Cancel</button>
+						</form>
+					</div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Bottom Button Container -->
+        <div class="bottom-buttons">
+            <button onclick="exportDatabase()">Export Database</button>
+            <input type="file" onchange="importDatabase(event)">
+            <button onclick="wipeDatabase()">Wipe Database</button>
+        </div>
+    </div>
+
+    <!-- JavaScript Libraries and Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsSHA/2.4.2/sha.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.6.2/sql-wasm.js" async></script>
+    <script src="js/crypto.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/2fa.js"></script>
+</body>
+</html>

@@ -1,0 +1,289 @@
+/* Body to center the main container */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #1e1e1e;
+    color: #ddd;
+    margin: 0;
+    padding: 0;
+}
+
+/* Main container with fixed width of 1024px */
+#container {
+    width: 1024px; /* Fixed width for the entire content area */
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Full viewport height */
+    background-color: #2e2e2e;
+    border: 1px solid #444;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+main#app {
+    display: flex;
+    flex: 1;
+    overflow-y: hidden; /* Disable scroll on main content */
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+}
+
+/* Main app content */
+#app {
+    display: flex;
+    flex: 1; /* Fills remaining space between header and footer */
+    background-color: #2e2e2e;
+    border: 1px solid #444;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Sidebar for list items */
+/* Sidebar for list items with a static width */
+#list-panel {
+    width: 250px; /* Fixed width for sidebar */
+    padding: 15px;
+    background-color: #3e3e3e;
+    border-right: 1px solid #444;
+    box-sizing: border-box;
+    overflow-y: auto;
+    max-height: calc(100vh - 100px); /* Adjusted for footer */
+}
+
+#list-panel button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #555;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#list-panel button:hover {
+    background-color: #666;
+}
+
+#search-section {
+    margin-bottom: 20px;
+}
+
+#search-form {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    gap: 10px;
+    align-items: flex-start; /* Align items to the left */
+}
+
+#search-query {
+    width: 100%; /* Ensure input takes full width of the form */
+    box-sizing: border-box;
+}
+
+#search-options {
+    display: flex;
+    gap: 10px;
+}
+
+#item-list-container {
+    max-height: calc(100vh - 180px); /* Adjust height to reach the footer before scrolling */
+    overflow-y: auto;
+}
+
+#item-list {
+    max-height: 100%; /* Adjust to container height */
+    overflow-y: auto;
+    color: #ddd;
+}
+
+#item-details p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#password-field,
+#twofa-field {
+    padding: 2px 6px;
+    background-color: #f4f4f4;
+    border-radius: 4px;
+}
+
+#item-list li {
+    padding: 10px;
+    border-bottom: 1px solid #555;
+    cursor: pointer;
+}
+
+#item-list li:hover {
+    background-color: #444;
+}
+
+/* Details panel on the right */
+/* Details panel with remaining width */
+#details-panel {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #2e2e2e;
+    box-sizing: border-box;
+}
+
+#details-container {
+    padding: 15px;
+    background-color: #3e3e3e;
+    border-radius: 8px;
+}
+
+/* Buttons */
+button {
+    padding: 8px 12px;
+    background-color: #555;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #666;
+}
+
+.form-section {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #3e3e3e;
+    border-radius: 8px;
+}
+
+.form-section label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.form-section input, .form-section textarea, .form-section button {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+.form-section button {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #555;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.form-section button:hover {
+    background-color: #666;
+}
+
+/* Bottom buttons container */
+.bottom-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    background-color: #333;
+    padding: 10px 0;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    box-sizing: border-box;
+}
+
+
+.bottom-buttons button, 
+.bottom-buttons input[type="file"] {
+    padding: 8px 12px;
+    background-color: #555;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.bottom-buttons button:hover, 
+.bottom-buttons input[type="file"]:hover {
+    background-color: #777;
+}
+
+/* Search bar adjustments to move to header */
+#search-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-right: 10px;
+}
+
+#search-container input[type="text"] {
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+#search-container button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #555;
+    color: #fff;
+    cursor: pointer;
+}
+
+#main-content {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background-color: #222;
+}
+
+/* Adjust form layout to display fields line by line */
+#add-card-form label {
+    display: block;
+    margin-bottom: 15px;
+    color: #ddd;
+}
+
+/* Styling for inline expiration date and CVV on the same line */
+#add-card-form .row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* Ensure the form fields have consistent padding and width */
+#add-card-form input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background-color: #2e2e2e;
+    color: #ddd;
+    box-sizing: border-box;
+}
+
+/* Adjust button styling to match the rest of the design */
+#add-card-form button {
+    padding: 10px;
+    background-color: #555;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+#add-card-form button:hover {
+    background-color: #666;
+}
