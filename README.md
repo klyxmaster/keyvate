@@ -59,3 +59,21 @@ While Keyvate works directly in your browser, you may optionally use a local ser
 - **Import**: To restore data, import the JSON file you previously exported.
 
 By following these steps, you’re set to start using Keyvate—the secure, local-first password manager that gives you total control over your data!
+
+
+## Important Note on Importing Data
+
+The import feature in **Keyvate** allows you to bring in data from an external JSON file to populate your database. Here’s what to keep in mind when using the import feature:
+
+1. **Overwrite vs. Additive Import**:
+   - If you **wipe the database** before importing, the imported data will replace any existing data in the database, ensuring a fresh start.
+   - If you **do not wipe the database** before importing, the imported data will be added to the existing entries. This can lead to **duplicates** if the data being imported already exists in the database.
+
+2. **How to Avoid Duplicates**:
+   - To ensure no duplicates, use the "Wipe Database" button before importing a new file.
+   - Only import data that hasn’t been previously imported or backed up.
+
+3. **When to Use Wipe Database**:
+   - Wiping is recommended if you are restoring from a known backup or switching devices, to ensure the imported data is clean and free of duplicates.
+
+By keeping this in mind, you can manage your data more effectively and ensure the database remains organized.
