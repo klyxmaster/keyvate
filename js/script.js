@@ -20,6 +20,86 @@ function initializeKeys() {
     return { secretKey, encryptionPassword };
 }
 
+
+// Generate a password based on user-defined length
+function generatePassword() {
+    const lengthInput = document.getElementById('password-length');
+    const length = parseInt(lengthInput.value) || 16;
+
+    const charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+[]{}|;:,.<>?';
+    let password = '';
+    for (let i = 0; i < length; i++) {
+        const randomIndex = Math.floor(Math.random() * charset.length);
+        password += charset[randomIndex];
+    }
+
+    // Ensure display element exists
+    const passwordDisplay = ensurePasswordDisplay();
+    passwordDisplay.textContent = password;
+}
+
+function copyGeneratedPassword() {
+    const passwordElement = ensurePasswordDisplay();
+    if (!passwordElement || !passwordElement.textContent) {
+        console.error("No password available to copy.");
+        return;
+    }
+
+    const password = passwordElement.textContent;
+
+    navigator.clipboard.writeText(password).then(() => {
+        alert("Password copied to clipboard!");
+    }).catch(err => {
+        console.error("Failed to copy password:", err);
+    });
+}
+
+
+function ensurePasswordDisplay() {
+    let passwordDisplay = document.getElementById('generated-password-display');
+    if (!passwordDisplay) {
+        // Create the element if it doesn't exist
+        passwordDisplay = document.createElement('div');
+        passwordDisplay.id = 'generated-password-display';
+        document.getElementById('password-generator').appendChild(passwordDisplay);
+    }
+    return passwordDisplay;
+}
+
+
+function copyGeneratedPassword() {
+    const passwordElement = document.getElementById('generated-password-display');
+    console.log(passwordElement); // Check if the element exists
+    if (!passwordElement || !passwordElement.textContent) {
+        console.error("No password available to copy or element not found.");
+        return;
+    }
+
+    const password = passwordElement.textContent;
+    console.log("Password to copy:", password); // Log the password to ensure it's correct
+
+    navigator.clipboard.writeText(password).then(() => {
+        alert("Password copied to clipboard!");
+    }).catch(err => {
+        console.error("Failed to copy password:", err);
+    });
+}
+
+
+
+function resetPasswordGenerator() {
+    const generatorDiv = document.getElementById('password-generator');
+    generatorDiv.innerHTML = `
+        <span id="pwgen-label">pwgen</span>
+        <input type="number" id="password-length" value="16" min="16" max="64" title="Password Length">
+        <button id="generate-btn" onclick="generatePassword()">></button>
+    `;
+}
+
+
+
+
+
 // Call initializeKeys to retrieve the keys
 var { secretKey, encryptionPassword } = initializeKeys();
 

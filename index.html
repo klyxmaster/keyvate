@@ -13,12 +13,29 @@
             <div id="search-container">
                 <input type="text" id="search-query" placeholder="Search...">               
                 <button onclick="performSearch()">Search</button>
-            </div>
+            </div>	
+			
         </header>
+		
+		
 
         <main id="app">
+			
+			
             <!-- Sidebar for Listing Sites or Cards -->
             <aside id="list-panel">
+				<!-- Password Generator Section -->
+				<div id="password-generator">
+					<input type="number" id="password-length" value="16" min="16" />
+					<button onclick="generatePassword()">></button>
+					<div id="generated-password-display"></div>
+					<button onclick="copyGeneratedPassword()">c</button>
+					
+				</div>
+
+			
+			<hr id="password-generator-separator">
+			
                 <div id="radio-buttons">
                     <label><input type="radio" name="itemType" value="websites" checked onclick="toggleAddButton('websites')"> Websites</label>
                     <label><input type="radio" name="itemType" value="cards" onclick="toggleAddButton('cards')"> Cards</label>

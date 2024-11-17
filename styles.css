@@ -1,198 +1,155 @@
-/* Body to center the main container */
+/* General Body Styling */
 body {
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1e1e1e;
+    color: #ddd;
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    background-color: #1e1e1e;
-    color: #ddd;
+}
+
+/* Container for the entire app */
+#container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Full viewport height */
+    width: 1024px; /* Fixed width */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    background-color: #2e2e2e;
+    overflow: hidden;
+}
+
+/* Header Section */
+header {
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* Main Application Layout */
+main#app {
+    display: flex;
+    flex: 1;
+    overflow-y: auto;
+}
+
+/* Sidebar for List Panel */
+#list-panel {
+    width: 25%;
+    background-color: #3e3e3e;
+    border-right: 1px solid #444;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+#list-panel ul {
+    list-style: none;
     margin: 0;
     padding: 0;
 }
 
-/* Main container with fixed width of 1024px */
-#container {
-    width: 1024px; /* Fixed width for the entire content area */
-    display: flex;
-    flex-direction: column;
-    height: 100vh; /* Full viewport height */
-    background-color: #2e2e2e;
-    border: 1px solid #444;
-    border-radius: 8px;
-    box-sizing: border-box;
-}
-
-main#app {
-    display: flex;
-    flex: 1;
-    overflow-y: hidden; /* Disable scroll on main content */
-}
-
-/* Header */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+#list-panel li {
     padding: 10px;
-    background-color: #333;
+    margin: 5px 0;
+    background-color: #444;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#list-panel li:hover {
+    background-color: #555;
+}
+
+/* Password Generator */
+#password-generator {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #444;
+    border-radius: 8px;
+}
+
+#password-generator input[type="number"] {
+    width: 50px;
+    padding: 5px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background-color: #2e2e2e;
     color: #fff;
+    text-align: center;
+    margin-right: 10px;
 }
 
-/* Main app content */
-#app {
-    display: flex;
-    flex: 1; /* Fills remaining space between header and footer */
-    background-color: #2e2e2e;
-    border: 1px solid #444;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-/* Sidebar for list items */
-/* Sidebar for list items with a static width */
-#list-panel {
-    width: 250px; /* Fixed width for sidebar */
-    padding: 15px;
-    background-color: #3e3e3e;
-    border-right: 1px solid #444;
-    box-sizing: border-box;
-    overflow-y: auto;
-    max-height: calc(100vh - 100px); /* Adjusted for footer */
-}
-
-#list-panel button {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
+#password-generator button {
+    padding: 5px 10px;
     background-color: #555;
     color: #fff;
     border: none;
+    border-radius: 4px;
     cursor: pointer;
+    font-size: 14px;
 }
 
-#list-panel button:hover {
+#password-generator button:hover {
     background-color: #666;
 }
 
-#search-section {
-    margin-bottom: 20px;
-}
-
-#search-form {
-    display: flex;
-    flex-direction: column; /* Stack items vertically */
-    gap: 10px;
-    align-items: flex-start; /* Align items to the left */
-}
-
-#search-query {
-    width: 100%; /* Ensure input takes full width of the form */
-    box-sizing: border-box;
-}
-
-#search-options {
-    display: flex;
-    gap: 10px;
-}
-
-#item-list-container {
-    max-height: calc(100vh - 180px); /* Adjust height to reach the footer before scrolling */
-    overflow-y: auto;
-}
-
-#item-list {
-    max-height: 100%; /* Adjust to container height */
-    overflow-y: auto;
+#generated-password-display {
+    display: inline-block; /* Keep the display inline with the button */
+    max-width: 100%; /* Prevent it from taking too much space */
+    white-space: nowrap; /* Ensure the text doesn't wrap */
+    overflow-x: auto; /* Allow horizontal scrolling for long text */
+    padding: 5px;
     color: #ddd;
+    background-color: #222;
+    border: 1px solid #555;
+    border-radius: 3px;
+    vertical-align: middle; /* Align it vertically with the button */
 }
 
-#item-details p {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-#password-field,
-#twofa-field {
-    padding: 2px 6px;
-    background-color: #f4f4f4;
-    border-radius: 4px;
-}
-
-#item-list li {
-    padding: 10px;
-    border-bottom: 1px solid #555;
+#copy-button {
+    display: inline-block; /* Keep it inline with the password */
+    padding: 5px 10px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #555;
+    border: none;
+    border-radius: 3px;
+    margin-left: 5px; /* Add a small space between the password and button */
     cursor: pointer;
+    vertical-align: middle; /* Align it vertically with the display */
 }
 
-#item-list li:hover {
-    background-color: #444;
-}
-
-/* Details panel on the right */
-/* Details panel with remaining width */
+/* Details Panel Styling */
 #details-panel {
-    flex-grow: 1;
+    width: 75%;
     padding: 20px;
-    background-color: #2e2e2e;
     box-sizing: border-box;
+    overflow-y: auto;
 }
 
 #details-container {
-    padding: 15px;
     background-color: #3e3e3e;
     border-radius: 8px;
-}
-
-/* Buttons */
-button {
-    padding: 8px 12px;
-    background-color: #555;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #666;
-}
-
-.form-section {
-    margin-top: 20px;
     padding: 15px;
-    background-color: #3e3e3e;
-    border-radius: 8px;
 }
 
-.form-section label {
-    display: block;
-    margin-bottom: 10px;
+#details-container p {
+    margin: 10px 0;
 }
 
-.form-section input, .form-section textarea, .form-section button {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    box-sizing: border-box;
-}
-
-.form-section button {
-    margin-top: 15px;
-    padding: 10px;
-    background-color: #555;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
-
-.form-section button:hover {
-    background-color: #666;
-}
-
-/* Bottom buttons container */
+/* Footer Section */
 .bottom-buttons {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 10px;
     background-color: #333;
     padding: 10px 0;
@@ -203,87 +160,15 @@ button:hover {
     box-sizing: border-box;
 }
 
-
-.bottom-buttons button, 
-.bottom-buttons input[type="file"] {
-    padding: 8px 12px;
-    background-color: #555;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 4px;
-}
-
-.bottom-buttons button:hover, 
-.bottom-buttons input[type="file"]:hover {
-    background-color: #777;
-}
-
-/* Search bar adjustments to move to header */
-#search-container {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    margin-right: 10px;
-}
-
-#search-container input[type="text"] {
-    padding: 5px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-}
-
-#search-container button {
-    padding: 5px 10px;
-    border: none;
-    background-color: #555;
-    color: #fff;
-    cursor: pointer;
-}
-
-#main-content {
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    background-color: #222;
-}
-
-/* Adjust form layout to display fields line by line */
-#add-card-form label {
-    display: block;
-    margin-bottom: 15px;
-    color: #ddd;
-}
-
-/* Styling for inline expiration date and CVV on the same line */
-#add-card-form .row {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}
-
-/* Ensure the form fields have consistent padding and width */
-#add-card-form input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #555;
-    border-radius: 4px;
-    background-color: #2e2e2e;
-    color: #ddd;
-    box-sizing: border-box;
-}
-
-/* Adjust button styling to match the rest of the design */
-#add-card-form button {
+.bottom-buttons button {
     padding: 10px;
     background-color: #555;
     color: #fff;
     border: none;
-    cursor: pointer;
     border-radius: 4px;
-    margin-right: 10px;
+    cursor: pointer;
 }
 
-#add-card-form button:hover {
+.bottom-buttons button:hover {
     background-color: #666;
 }
