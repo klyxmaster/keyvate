@@ -172,3 +172,147 @@ main#app {
 .bottom-buttons button:hover {
     background-color: #666;
 }
+
+/* Item Details Section */
+#item-details {
+    background-color: #3e3e3e; /* Dark gray background for better contrast */
+    padding: 15px;
+    border-radius: 8px; /* Smooth rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    color: #ddd; /* Light gray text for readability */
+    font-size: 14px; /* Standard readable font size */
+    line-height: 1.6; /* Proper spacing between lines */
+    overflow-wrap: break-word; /* Ensure long content breaks correctly */
+}
+
+#item-details p {
+    margin-bottom: 10px; /* Space between paragraphs */
+}
+
+#item-details strong {
+    font-weight: bold; /* Highlight strong labels */
+    color: #fff; /* White text for labels */
+}
+
+#item-details button {
+    padding: 5px 10px;
+    margin-top: 10px;
+    background-color: #555; /* Button background */
+    color: #fff; /* Button text */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#item-details button:hover {
+    background-color: #777; /* Lighter gray on hover */
+}
+
+/* Add Website Form */
+#add-site-form {
+    display: none; /* Hidden by default */
+    background-color: #3e3e3e; /* Matches the details section background */
+    padding: 20px; /* Proper padding for content spacing */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    color: #ddd; /* Text color for readability */
+    font-size: 14px; /* Standard font size */
+    line-height: 1.6; /* Line spacing for readability */
+}
+
+/* Form Labels */
+#add-site-form label {
+    display: block;
+    margin-bottom: 8px; /* Space below the label */
+    font-weight: bold;
+    color: #fff; /* Highlight labels with white text */
+}
+
+/* Input Fields */
+#add-site-form input,
+#add-site-form textarea {
+    width: 100%; /* Full-width inputs */
+    padding: 8px;
+    margin-bottom: 12px; /* Space between fields */
+    border: 1px solid #555; /* Subtle border */
+    border-radius: 4px; /* Rounded corners */
+    background-color: #2e2e2e; /* Matches the app’s color theme */
+    color: #ddd; /* Input text color */
+    box-sizing: border-box;
+}
+
+/* Buttons */
+#add-site-form button {
+    padding: 10px 15px;
+    background-color: #555; /* Matches button theme */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#add-site-form button:hover {
+    background-color: #777; /* Lighter shade on hover */
+}
+
+/* Form Section Title */
+#add-site-form h3 {
+    margin-bottom: 15px; /* Space below the heading */
+    font-size: 18px; /* Slightly larger for emphasis */
+    color: #fff; /* White heading */
+}
+
+/* Add Credit Card Form */
+#add-card-form {
+    display: none; /* Hidden by default */
+    background-color: #3e3e3e; /* Matches the details section background */
+    padding: 20px; /* Proper padding for content spacing */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    color: #ddd; /* Text color for readability */
+    font-size: 14px; /* Standard font size */
+    line-height: 1.6; /* Line spacing for readability */
+}
+
+/* Form Labels */
+#add-card-form label {
+    display: block;
+    margin-bottom: 8px; /* Space below the label */
+    font-weight: bold;
+    color: #fff; /* Highlight labels with white text */
+}
+
+/* Input Fields */
+#add-card-form input {
+    width: 100%; /* Full-width inputs */
+    padding: 8px;
+    margin-bottom: 12px; /* Space between fields */
+    border: 1px solid #555; /* Subtle border */
+    border-radius: 4px; /* Rounded corners */
+    background-color: #2e2e2e; /* Matches the app’s color theme */
+    color: #ddd; /* Input text color */
+    box-sizing: border-box;
+}
+
+/* Buttons */
+#add-card-form button {
+    padding: 10px 15px;
+    background-color: #555; /* Matches button theme */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#add-card-form button:hover {
+    background-color: #777; /* Lighter shade on hover */
+}
+
+/* Form Section Title */
+#add-card-form h3 {
+    margin-bottom: 15px; /* Space below the heading */
+    font-size: 18px; /* Slightly larger for emphasis */
+    color: #fff; /* White heading */
+}
